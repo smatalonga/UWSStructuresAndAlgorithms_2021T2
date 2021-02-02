@@ -14,7 +14,7 @@ public class GarbageTruck extends Truck {
 	public GarbageTruck(String name, String colour, int maxload) {
 		super(name, colour);
 		this.maxLoad = maxload;
-		
+		 
 	}
 
 	@Override
