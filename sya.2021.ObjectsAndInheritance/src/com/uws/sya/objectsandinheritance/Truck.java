@@ -1,6 +1,13 @@
 package com.uws.sya.objectsandinheritance;
+/*
+ * Com is standard
+ * See: https://stackoverflow.com/questions/2125293/java-packages-com-and-org
+ * UWS --> My company
+ * SYA --> My Project
+ * objectsandinheritance --> My Class
+ */
 
-import com.uws.sya.objects.Wheel;
+
 
 public class Truck {
 	private String name;
@@ -10,6 +17,7 @@ public class Truck {
 	private Wheel backRightWheel;
 	private Wheel backLeftWheel;
 
+	//Constructor
 	public Truck(String name, String colour) {
 		this.name = name;
 		this.colour = colour;
@@ -21,7 +29,7 @@ public class Truck {
 	}
 
 	public void action() {
-		System.out.println("Moving");
+		System.out.println("Truck Moving");
 	}
 
 	@Override
@@ -33,7 +41,7 @@ public class Truck {
 		return result;
 	}
 
-	@Override
+	@Override //From Object
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -67,6 +75,8 @@ public class Truck {
 		return "Truck [name=" + name + ", colour=" + colour + "]";
 	}
 
+	//Setters and Gettres
+	//A Class should be open to extension but closed to modification
 	public String getName() {
 		return name;
 	}

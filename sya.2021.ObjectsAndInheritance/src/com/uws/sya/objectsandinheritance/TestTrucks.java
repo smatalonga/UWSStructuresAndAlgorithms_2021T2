@@ -9,8 +9,9 @@ public class TestTrucks {
 	
 		
 		Truck t1 = new Truck("Tesco", "Blue");
-		Truck t3 = new Truck("Tesco", "Blue");
 		Truck t2 = new Truck("ASDA", "Green");
+		Truck t3_sameas_t1 = new Truck("Tesco", "Blue");
+		
 		GarbageTruck gt1 = new GarbageTruck("Council", "Brown", 40);
 		GarbageTruck gt2 = new GarbageTruck("Private", "Orange");
 		
@@ -24,12 +25,17 @@ public class TestTrucks {
 		//regardless of their type
 		//without checking their type
 		for(Truck t : listOfTrucks) {
-			t.action();
+			t.action();//THt the same signal can produce different behaviours we call "Polymorphism"!
 		}
 		
 		
-		if (t1.equals(t3)) {
-			t1=t3;
+		if (listOfTrucks[3].getClass() == GarbageTruck.class) {
+			System.out.println("PLEASE DONT DO THIS! :-) ");
+		}
+				
+				
+		if (t1.equals(t3_sameas_t1)) {
+			t1=t3_sameas_t1;
 			System.out.println("My trucks are equal");
 		}
 		else {
@@ -59,26 +65,9 @@ public class TestTrucks {
 		///////  CASTING and DOWNCASTING //////////////////////
 		////////////////////////////////////////////////////////
 		
-		GarbageTruck anotherGarbageTruckVariable = (GarbageTruck) listOfTrucks[3];
-		//I can down cast,  as long as I am sure what is inside the variable.
+		GarbageTruck anotherGarbageTruckVariable = (GarbageTruck) listOfTrucks[3];//Casting
 		
-		/*
-		
-		
-		
-		// I can still treat them all equally.
-		for(Truck gt : listOfGarbageTrucks) {
-			gt.action();
-		}
-		
-		// I can create objects of subclasses without need for a variable
-		Truck disguisedGarbageTruck = new GarbageTruck("Mercedes", "Blue");
-		listOfGarbageTrucks[2] = disguisedGarbageTruck;
-		// I can still treat them all equally.
-		for(Truck gt : listOfGarbageTrucks) {
-			System.out.println(gt.toString());
-		}*/
-		
+		System.out.println(anotherGarbageTruckVariable.toString());
 		
 		
 		
@@ -98,7 +87,7 @@ public class TestTrucks {
 		secondListOfGarbageTrucks[1] = new GarbageTruck("SCANIA", "Red");
 		
 		
-		secondListOfGarbageTrucks[2] = (GarbageTruck) foxInSheepTruck;
+		secondListOfGarbageTrucks[2] = (GarbageTruck) foxInSheepTruck;//CASTING
 		for(GarbageTruck gt : secondListOfGarbageTrucks) {
 			System.out.println(gt.toString());
 		}

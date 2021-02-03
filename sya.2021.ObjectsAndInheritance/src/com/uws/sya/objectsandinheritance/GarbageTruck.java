@@ -25,7 +25,7 @@ public class GarbageTruck extends Truck {
 		return result;
 	}
 
-	@Override
+	@Override //From Truck
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -45,10 +45,10 @@ public class GarbageTruck extends Truck {
 
 	
 
-	@Override
+	@Override //From Truck
 	public void action() {
 		
-		System.out.println("Moving and loading garbage");
+		System.out.println("GT: Moving and loading garbage");
 		//super.action();
 	}
 	
