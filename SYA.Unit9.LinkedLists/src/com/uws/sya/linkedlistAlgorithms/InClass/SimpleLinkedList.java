@@ -7,7 +7,7 @@ public class SimpleLinkedList {
 	
 	public SimpleLinkedList() {
 		this.first = null;
-	}
+	} 
 	
 	public SimpleListNode getFirst() {
 		return first;
