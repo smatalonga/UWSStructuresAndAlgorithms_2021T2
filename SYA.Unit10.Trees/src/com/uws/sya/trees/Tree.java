@@ -76,7 +76,7 @@ public class Tree {
    private void inorderHelper( TreeNode node, ArrayList list )
    {
       if ( node == null )
-         return;
+    	  return;
 
       inorderHelper( node.getLeftNode(), list );        // traverse left subtree
       list.add(node.getPayload());// output node data
