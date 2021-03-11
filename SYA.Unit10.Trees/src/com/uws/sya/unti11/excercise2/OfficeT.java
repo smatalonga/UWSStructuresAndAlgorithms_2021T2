@@ -32,7 +32,8 @@ public class OfficeT {
 				 root = newWorkerNodeToAddTotheHierarchy;
 			}
 			else {
-				 root.addSubordiante(newWorkerName);
+				WorkerNode toAdd = new WorkerNode(newWorkerName, managerName);
+				 root.addSubordinate(toAdd, managerName);
 			}	
 			
 		

@@ -6,10 +6,10 @@ import java.util.List;
 
 public class WorkerNode {
 
-	protected WorkerNode bossName;
-	protected String name;
-	protected WorkerNode subordinate;
-	protected WorkerNode peer;
+	private WorkerNode bossName;
+	private String name;
+	private WorkerNode subordinate;
+	private WorkerNode peer;
     
     //Constructor
     public WorkerNode(String name,WorkerNode boss) {    
@@ -61,9 +61,7 @@ public class WorkerNode {
 	public void addSubordinate(WorkerNode newSubordiante, WorkerNode inmediateBoss) {
 		if (this.subordinate == null) {
 			this.subordinate = newSubordiante;
-			newSubordiante.setBoss(inmediateBoss);
-			
-			
+			newSubordiante.setBoss(inmediateBoss);	
 		}
 		else {
 			this.subordinate.addPeer(newSubordiante, inmediateBoss);//REcursion thorugh Peer nodes
